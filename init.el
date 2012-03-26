@@ -1,5 +1,9 @@
+(add-to-list 'load-path "~/danielconf/")
+(add-to-list 'load-path "~/danielconf/lib/")
+
 (add-to-list 'load-path "~/github/config/lib/")
 (require 'fill-column-indicator)
+(load-library "setup-el-get.el")
 
 (defun dragons()
   (interactive)
