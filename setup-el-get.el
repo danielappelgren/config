@@ -44,11 +44,11 @@
    ;; 		   ;; Set correct eproject keybindings here.
 
    ;; 		   ))
-   ;; (:name smex				; a better (ido like) M-x
-   ;; 	  :after (lambda ()
-   ;; 		   (setq smex-save-file "~/.emacs.d/.smex-items")
-   ;; 		   (global-set-key (kbd "M-x") 'smex)
-   ;; 		   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
+   (:name smex				; a better (ido like) M-x
+   	  :after (lambda ()
+   		   (setq smex-save-file "~/.emacs.d/.smex-items")
+   		   (global-set-key (kbd "M-x") 'smex)
+   		   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
    ;; (:name magit				; git meet emacs, and a binding
    ;; 	  :after (lambda ()
    ;; 		   (global-set-key (kbd "C-x C-z") 'magit-status)))
@@ -62,9 +62,7 @@
           :after (lambda ()
                    ;; Better undo / redo handling
                    (require 'redo+)
-                   (global-set-key  [?\M-_] 'redo)
-                   )
-	  )
+                   (global-set-key  [?\M-_] 'redo)))
    ;; (:name json-mode :type git :url "https://github.com/joshwnj/json-mode.git"
    ;; 	  :after (lambda ()
    ;; 		   (progn
@@ -102,7 +100,7 @@
    ;; anything-match-plugin
    redo+
    ;; lua-mode
-   ;; smex
+   smex
    ;; sunrise-commander
    ;; json-mode
    ;; ace-jump-mode
