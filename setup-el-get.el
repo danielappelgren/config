@@ -58,7 +58,13 @@
    ;; 		   ;; when using AZERTY keyboard, consider C-x C-_
    ;; 		   (global-set-key (kbd "C-x C-/") 'goto-last-change))
    ;; 	  )
-   (:name redo+ :type elpa)
+   (:name redo+ :type elpa
+          :after (lambda ()
+                   ;; Better undo / redo handling
+                   (require 'redo+)
+                   (global-set-key  [?\M-_] 'redo)
+                   )
+	  )
    ;; (:name json-mode :type git :url "https://github.com/joshwnj/json-mode.git"
    ;; 	  :after (lambda ()
    ;; 		   (progn
@@ -77,7 +83,7 @@
    )
  )
 
-(load-library "recipes/recipe-anything.el")
+;;(load-library "recipes/recipe-anything.el")
 
 ;; now set our own packages
 (setq
@@ -89,7 +95,7 @@
    ;; zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    ;; color-theme		                ; nice looking emacs
    ;; color-theme-tango	                ; check out color-theme-solarized
-   ;; js2-mode
+   js2-mode
    ;; anything
    ;; anything-complete
    ;; anything-extension
@@ -133,7 +139,7 @@
 ;;        (while list
 ;;          (print (car list))
 ;;          (setq list (cdr list))))
-;;(print-elements-of-list my:el-get-packages)
+;; (print-elements-of-list my:el-get-packages)
 
 
 ;; install new packages and init already installed packages
