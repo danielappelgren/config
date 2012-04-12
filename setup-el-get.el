@@ -58,7 +58,7 @@
    ;; 		   ;; when using AZERTY keyboard, consider C-x C-_
    ;; 		   (global-set-key (kbd "C-x C-/") 'goto-last-change))
    ;; 	  )
-   ;; (:name redo+ :type elpa)
+   (:name redo+ :type elpa)
    ;; (:name json-mode :type git :url "https://github.com/joshwnj/json-mode.git"
    ;; 	  :after (lambda ()
    ;; 		   (progn
@@ -83,25 +83,24 @@
 (setq
  my:el-get-packages
  '(el-get				; el-get is self-hosting
-   escreen            			; screen for emacs, C-\ C-h
-   php-mode-improved			; if you're into php...
-   auto-complete			; complete as you type with overlays
-   zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
-   color-theme		                ; nice looking emacs
-   color-theme-tango	                ; check out color-theme-solarized
-   js2-mode
-   anything
-   anything-complete
-   anything-extension
-   anything-match-plugin
-;;   eproject
+   ;; escreen            			; screen for emacs, C-\ C-h
+   ;; php-mode-improved			; if you're into php...
+   ;; auto-complete			; complete as you type with overlays
+   ;; zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
+   ;; color-theme		                ; nice looking emacs
+   ;; color-theme-tango	                ; check out color-theme-solarized
+   ;; js2-mode
+   ;; anything
+   ;; anything-complete
+   ;; anything-extension
+   ;; anything-match-plugin
    redo+
-   lua-mode
-   smex
-   sunrise-commander
-   json-mode
-   ace-jump-mode
-   project-root
+   ;; lua-mode
+   ;; smex
+   ;; sunrise-commander
+   ;; json-mode
+   ;; ace-jump-mode
+   ;; project-root
 ))
 
 
