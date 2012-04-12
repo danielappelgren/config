@@ -29,51 +29,51 @@
 		   (global-set-key (kbd "<C-S-down>")   'buf-move-down)
 		   (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 		   (global-set-key (kbd "<C-S-right>")  'buf-move-right)))
-   (:name yasnippet :type elpa)
-   (:name lua-mode :type elpa)
-   (:name project-root 
-	  :type http-tar 
-	  :options ("xzf") 
-	  :url "http://hg.piranha.org.ua/project-root/archive/tip.tar.gz"
-	  :after (lambda () 
-		   (require 'project-root)
-		   ))
-   (:name sunrise-commander :type elpa)
-   (:name eproject :type elpa
-	  :after (lambda () 
-		   ;; Set correct eproject keybindings here.
+   ;; (:name yasnippet :type elpa)
+   ;; (:name lua-mode :type elpa)
+   ;; (:name project-root 
+   ;; 	  :type http-tar 
+   ;; 	  :options ("xzf") 
+   ;; 	  :url "http://hg.piranha.org.ua/project-root/archive/tip.tar.gz"
+   ;; 	  :after (lambda () 
+   ;; 		   (require 'project-root)
+   ;; 		   ))
+   ;; (:name sunrise-commander :type elpa)
+   ;; (:name eproject :type elpa
+   ;; 	  :after (lambda () 
+   ;; 		   ;; Set correct eproject keybindings here.
 
-		   ))
-   (:name smex				; a better (ido like) M-x
-   	  :after (lambda ()
-   		   (setq smex-save-file "~/.emacs.d/.smex-items")
-   		   (global-set-key (kbd "M-x") 'smex)
-   		   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
-   (:name magit				; git meet emacs, and a binding
-	  :after (lambda ()
-		   (global-set-key (kbd "C-x C-z") 'magit-status)))
+   ;; 		   ))
+   ;; (:name smex				; a better (ido like) M-x
+   ;; 	  :after (lambda ()
+   ;; 		   (setq smex-save-file "~/.emacs.d/.smex-items")
+   ;; 		   (global-set-key (kbd "M-x") 'smex)
+   ;; 		   (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
+   ;; (:name magit				; git meet emacs, and a binding
+   ;; 	  :after (lambda ()
+   ;; 		   (global-set-key (kbd "C-x C-z") 'magit-status)))
 
-   (:name goto-last-change		; move pointer back to last change
-	  :after (lambda ()
-		   ;; when using AZERTY keyboard, consider C-x C-_
-		   (global-set-key (kbd "C-x C-/") 'goto-last-change))
-	  )
-   (:name redo+ :type elpa)
-   (:name json-mode :type git :url "https://github.com/joshwnj/json-mode.git"
-   	  :after (lambda ()
-		   (progn
-		     (load-library "json-mode/json-mode.el")
-		     (defun beautify-json ()
-		       (interactive)
-		       (let ((b (if mark-active (min (point) (mark)) (point-min)))
-			     (e (if mark-active (max (point) (mark)) (point-max))))
-			 (shell-command-on-region b e
-						  "python -mjson.tool" (current-buffer) t)))
-		     (define-key json-mode-map (kbd "C-c C-f") 'beautify-json)
+   ;; (:name goto-last-change		; move pointer back to last change
+   ;; 	  :after (lambda ()
+   ;; 		   ;; when using AZERTY keyboard, consider C-x C-_
+   ;; 		   (global-set-key (kbd "C-x C-/") 'goto-last-change))
+   ;; 	  )
+   ;; (:name redo+ :type elpa)
+   ;; (:name json-mode :type git :url "https://github.com/joshwnj/json-mode.git"
+   ;; 	  :after (lambda ()
+   ;; 		   (progn
+   ;; 		     (load-library "json-mode/json-mode.el")
+   ;; 		     (defun beautify-json ()
+   ;; 		       (interactive)
+   ;; 		       (let ((b (if mark-active (min (point) (mark)) (point-min)))
+   ;; 			     (e (if mark-active (max (point) (mark)) (point-max))))
+   ;; 			 (shell-command-on-region b e
+   ;; 						  "python -mjson.tool" (current-buffer) t)))
+   ;; 		     (define-key json-mode-map (kbd "C-c C-f") 'beautify-json)
 
-		     )
-		   )
-	  )
+   ;; 		     )
+   ;; 		   )
+   ;; 	  )
    )
  )
 
