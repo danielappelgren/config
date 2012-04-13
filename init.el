@@ -47,6 +47,11 @@
 ;; (setq fci-rule-column 80)
 ;; (add-hook 'javascript-mode-hook 'fci-mode)
 
+;; A library that saves the last position in files
+(require 'saveplace)
+;; Activate it!
+(setq-default save-place t)
+
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
 ;; Någon slags auto-komplettering
