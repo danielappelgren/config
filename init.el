@@ -52,6 +52,13 @@
 ;; Activate it!
 (setq-default save-place t)
 
+
+;; Alias web that is used to search in all web related files
+(add-to-list
+ 'grep-files-aliases
+ '("web" .  "*.js *.css *.html *.htm *.jsp *.xul")
+ )
+
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
 ;; Någon slags auto-komplettering
