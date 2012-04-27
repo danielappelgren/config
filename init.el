@@ -52,12 +52,19 @@
 ;; Activate it!
 (setq-default save-place t)
 
-
+;; Grep tool goodness
+(require 'grep)
 ;; Alias web that is used to search in all web related files
 (add-to-list
  'grep-files-aliases
  '("web" .  "*.js *.css *.html *.htm *.jsp *.xul")
  )
+
+;; Comment or uncomment region
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
+
+;; Toggle hide functions in js2-mode
+(define-key js2-mode-map (kbd "C-c C-e") 'js2-mode-toggle-hide-functions)
 
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
