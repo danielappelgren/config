@@ -64,7 +64,7 @@
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
 ;; Toggle hide functions in js2-mode
-(define-key js2-mode-map (kbd "C-c C-e") 'js2-mode-toggle-hide-functions)
+;;(define-key js2-mode-map (kbd "C-c C-e") 'js2-mode-toggle-hide-functions)
 
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
