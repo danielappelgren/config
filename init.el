@@ -63,8 +63,12 @@
 ;; Comment or uncomment region
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
-;; Toggle hide functions in js2-mode
-;;(define-key js2-mode-map (kbd "C-c C-e") 'js2-mode-toggle-hide-functions)
+(require 'highlight-symbol)
+
+(global-set-key [(control f3)] 'highlight-symbol-at-point)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-prev)
 
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner

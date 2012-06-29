@@ -79,6 +79,8 @@
    ;; 		   )
    ;; 	  )
    (:name js2-mode :type git :url "https://github.com/mooz/js2-mode.git" :module "js2-mode")
+
+   (:name highlight-symbol :type http :url "http://nschum.de/src/emacs/highlight-symbol/highlight-symbol.el")
    )
  )
 
@@ -106,6 +108,7 @@
    ;; json-mode
    ;; ace-jump-mode
    ;; project-root
+   highlight-symbol
 ))
 
 
