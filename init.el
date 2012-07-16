@@ -70,6 +70,21 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-prev)
 
+(defun ask-before-closing ()
+  "Ask whether or not to close, and then close if y was pressed"
+  (interactive)
+  (if (y-or-n-p (format "Are you sure you want to exit Emacs? "))
+      (if (< emacs-major-version 22)
+          (save-buffers-kill-terminal)
+        (save-buffers-kill-emacs))
+    (message "Canceled exit")))
+
+(when window-system
+  (global-set-key (kbd "C-x C-c") 'ask-before-closing))
+
+;; (require 'expand-region)
+;; (global-set-key (kbd "C-=") 'er/expand-region)
+
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
 ;; Någon slags auto-komplettering
