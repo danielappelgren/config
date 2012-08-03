@@ -51,10 +51,12 @@
    ;; Highlight using F3 or C-F3
    (:name highlight-symbol :type http :url "http://nschum.de/src/emacs/highlight-symbol/highlight-symbol.el")
 
+   (:name auto-complete :type git :url "https://github.com/m2ym/auto-complete/etc/install.el")
+
    )
  )
 
-;; ;; now set our own packages
+;; now set our own packages
 (setq
  my:el-get-packages
  '(el-get				; el-get is self-hosting
