@@ -7,9 +7,6 @@
 
 (load-library "setup-el-get.el")
 
-; try to improve slow performance on windows.
-;; (setq w32-get-true-file-attributes nil)
-
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -41,11 +38,6 @@
 
 ;; Show column-number in the mode line
 (column-number-mode 1)
-
-;; (setq fci-rule-width 1)
-;; (setq fci-rule-color "darkblue")
-;; (setq fci-rule-column 80)
-;; (add-hook 'javascript-mode-hook 'fci-mode)
 
 ;; A library that saves the last position in files
 (require 'saveplace)
