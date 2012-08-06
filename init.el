@@ -72,6 +72,9 @@
 (when window-system
   (global-set-key (kbd "C-x C-c") 'ask-before-closing))
 
+;; Show parenthesis near cursor
+(show-paren-mode 1)
+
 ;; (require 'expand-region)
 ;; (global-set-key (kbd "C-=") 'er/expand-region)
 
