@@ -75,13 +75,12 @@
 ;; Show parenthesis near cursor
 (show-paren-mode 1)
 
-;; (require 'expand-region)
-;; (global-set-key (kbd "C-=") 'er/expand-region)
+;; Setup project-root paths and rules
+(load-library "setup-project-root.el")
+
+;; Show line number
+(global-linum-mode t)
 
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
-;; Någon slags auto-komplettering
-;; Javascript tomma rader skall innehålla exakt 8 mellanslag (verifiera med jslint innan)
 ;; Kan man på något sätt hoppa till en metod i en fil (utan att söka)?
-;; Få lite koll på encoding.
-;; När man markerar en { skulle det vara trevligt om den stängande } kunde markeras samtidigt
