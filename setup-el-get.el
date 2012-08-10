@@ -44,6 +44,7 @@
                    (require 'redo+)
                    (global-set-key  [?\M-_] 'redo)))
 
+
    ;; Javascript mode
    (:name js2-mode :type git :url "https://github.com/mooz/js2-mode.git" :module "js2-mode")
 
