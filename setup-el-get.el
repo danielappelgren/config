@@ -37,7 +37,8 @@
                    (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
 
    ;; Redo
-   (:name redo+ :type elpa
+   (:name redo+ :type git
+          :url "https://github.com/emacsmirror/redo-plus.git"
           :after (lambda ()
                    ;; Better undo / redo handling
                    (require 'redo+)
@@ -85,6 +86,7 @@
                                                     ))
                    )
           )
+   
    )
  )
 
