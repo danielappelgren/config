@@ -81,6 +81,12 @@
 ;; Show line number
 (global-linum-mode t)
 
+;; IDO!
+;; (ido-mode t)
+
+;; Set alias to espresso-mode
+(defalias 'js-mode 'espresso-mode)
+
 ;; Indentera endast med 4 space för javascript
 ;; Fixa linje efter x antal columner
 ;; Kan man på något sätt hoppa till en metod i en fil (utan att söka)?
