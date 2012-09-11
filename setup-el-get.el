@@ -86,6 +86,8 @@
                                                     ))
                    )
           )
+
+   (:name espresso :type http :url "http://download-mirror.savannah.gnu.org/releases/espresso/espresso.el")
    
    )
  )
@@ -101,6 +103,7 @@
     highlight-symbol
     auto-complete
     project-root
+    espresso
     ))
 
  ;; Append the package lists
