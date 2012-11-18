@@ -12,7 +12,6 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-(setenv "LANG" "en_US.UTF8")
 
 (defun dragons()
   (interactive)
@@ -87,6 +86,6 @@
 ;; Set alias to espresso-mode
 (defalias 'js-mode 'espresso-mode)
 
-;; Indentera endast med 4 space för javascript
+;; Indentera endast med 4 space fÃ¶r javascript
 ;; Fixa linje efter x antal columner
-;; Kan man på något sätt hoppa till en metod i en fil (utan att söka)?
+;; Kan man pÃ¥ nÃ¥got sÃ¤tt hoppa till en metod i en fil (utan att sÃ¶ka)?
