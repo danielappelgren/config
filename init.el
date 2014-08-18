@@ -91,10 +91,12 @@
 	)
       )
 
+
 ; list all packages you want installed
 (setq my-el-get-packages
       (append
-       '(highlight-symbol)
+       '(highlight-symbol
+		 multiple-cursors)
        (mapcar 'el-get-source-name el-get-sources)
        )
       )
@@ -103,7 +105,12 @@
 
 ; enable packages
 (require 'highlight-symbol)
+(require 'multiple-cursors)
 (add-hook 'prog-mode-hook '(lambda () (highlight-symbol-mode t)))
+; Multiple cursors conf
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; solarized theme istalled from package-install
 ;; (package-initialize)
