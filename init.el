@@ -1,6 +1,3 @@
-;; (add-to-list 'load-path "~/config/")
-;; (load-library "init")
-
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -26,13 +23,13 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (defun comment-or-uncomment-region-or-line ()
-    "Comments or uncomments the region or the current line if there's no active region."
-    (interactive)
-    (let (beg end)
-        (if (region-active-p)
-            (setq beg (region-beginning) end (region-end))
-            (setq beg (line-beginning-position) end (line-end-position)))
-        (comment-or-uncomment-region beg end)))
+  "Comments or uncomments the region or the current line if there's no active region."
+  (interactive)
+  (let (beg end)
+	(if (region-active-p)
+		(setq beg (region-beginning) end (region-end))
+	  (setq beg (line-beginning-position) end (line-end-position)))
+	(comment-or-uncomment-region beg end)))
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 
 ;; Java specefic stuff
@@ -66,13 +63,29 @@
 ;; Show parenthesis near cursor
 (show-paren-mode 1)
 
-;; Resolved by the following steps:
-;; 1. download GnuTLS Windows binaries zip from http://www.gnutls.org/download.html
-;; 2. extract the zip
-;; 3. dump the entire contents of the bin/ folder into C:\Chocolatey\lib\Emacs.24.3\tools\emacs-24.3\bin
+;; A library that saves the last position in files
+(require 'saveplace)
+;; Activate it!
+(setq-default save-place t)
 
-;; Install and add git to path
+;; Backup files handling
+(defvar --backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p --backup-directory))
+        (make-directory --backup-directory t))
+(setq backup-directory-alist `(("." . ,--backup-directory)))
+(setq make-backup-files t               ; backup of a file the first time it is saved.
+      backup-by-copying t               ; don't clobber symlinks
+      version-control t                 ; version numbers for backup files
+      delete-old-versions t             ; delete excess backup files silently
+      delete-by-moving-to-trash t
+      kept-old-versions 6               ; oldest versions to keep when a new numbered backup is made (default: 2)
+      kept-new-versions 9               ; newest versions to keep when a new numbered backup is made (default: 2)
+      auto-save-default t               ; auto-save every buffer that visits a file
+      auto-save-timeout 20              ; number of seconds idle time before auto-save (default: 30)
+      auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
+      )
 
+;; el-get stuff
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -84,15 +97,15 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-; extra recipes for packages unknown to el-get (yet)  
+;; extra recipes for packages unknown to el-get (yet)  
 (setq el-get-sources
       '(
-	(:name highlight-symbol type: git url: "https://github.com/nschum/highlight-symbol.el.git")
-	)
+		(:name highlight-symbol type: git url: "https://github.com/nschum/highlight-symbol.el.git")
+		)
       )
 
 
-; list all packages you want installed
+;; list all packages you want installed
 (setq my-el-get-packages
       (append
        '(highlight-symbol
@@ -103,11 +116,11 @@
 
 (el-get 'sync my-el-get-packages) 
 
-; enable packages
+;; enable packages
 (require 'highlight-symbol)
 (require 'multiple-cursors)
 (add-hook 'prog-mode-hook '(lambda () (highlight-symbol-mode t)))
-; Multiple cursors conf
+										; Multiple cursors conf
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
