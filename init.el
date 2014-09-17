@@ -125,12 +125,6 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; solarized theme istalled from package-install
-;; (package-initialize)
-;; (load-theme 'solarized-light t)
-@@ -113,5 +113,8 @@
- (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
- 
  ;; solarized theme istalled from package-install
  ;; (package-initialize)
  ;; (load-theme 'solarized-light t)
