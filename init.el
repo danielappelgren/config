@@ -1,3 +1,19 @@
+(if (file-exists-p "/Users/daniel/.emacs.d/")
+    (setq config-home "/Users/daniel/.emacs.d/")
+  )
+;; (if (file-exists-p "C:/Users/daniel/.emacs.d/")
+;;     (setq config-home "C:/Users/daniel/.emacs.d/")
+;;   )
+
+;;; I prefer cmd key for meta
+(setq mac-option-key-is-meta nil
+      mac-command-key-is-meta t
+      mac-command-modifier 'meta
+      mac-option-modifier 'none)
+
+
+;; Add the configuration folder to the load path for el files.
+(setq load-path (cons config-home load-path))
 
 ;; First things firts, load el-get packages
 (load-library "setup-el-get.el")
