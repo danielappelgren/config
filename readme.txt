@@ -7,3 +7,7 @@ Emacs on Windows
 
 Install and add git to path
 
+2. Map Capslock to lctrl
+2.1 Download this app: http://www.benf.org/other/scanmapset/
+2.2 Run cmd as admin and run the following command: scanmapset.exe -s capslock=lctrl
+2.3 Restart your computer. Done.
