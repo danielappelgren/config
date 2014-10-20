@@ -42,6 +42,13 @@
   (local-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line))
 (add-hook 'html-mode-hook 'html-shortcuts)
 
+;; JSON perdy
+(defun json-format ()
+  (interactive)
+  (save-excursion
+	(shell-command-on-region (mark) (point) "python -m json.tool" (buffer-name) t)
+	)
+  )
 
 ;; Show line and column number in the mode line
 (line-number-mode 1)
