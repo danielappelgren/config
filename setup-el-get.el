@@ -14,8 +14,8 @@
 ;; extra recipes for packages unknown to el-get (yet)  
 (setq el-get-sources
       '(
-		(:name highlight-symbol type: git url: "https://github.com/nschum/highlight-symbol.el.git")
-		)
+	(:name highlight-symbol type: git url: "https://github.com/nschum/highlight-symbol.el.git")
+	)
       )
 
 
@@ -23,22 +23,35 @@
 (setq my-el-get-packages
       (append
        '(highlight-symbol
-		 multiple-cursors)
+		 multiple-cursors
+		 auto-complete)
        (mapcar 'el-get-source-name el-get-sources)
        )
       )
 
-(el-get 'sync my-el-get-packages) 
+;; install new packages and init already installed packages
+(el-get 'sync my-el-get-packages)
 
 ;; enable packages
 (require 'highlight-symbol)
 (require 'multiple-cursors)
+(require 'auto-complete)
+
 (add-hook 'prog-mode-hook '(lambda () (highlight-symbol-mode t)))
-										; Multiple cursors conf
+
+; Multiple cursors conf
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; solarized theme istalled from package-install
-;; (package-initialize)
-;; (load-theme 'solarized-light t)
+;; Auto complete config
+;; Fix navigation
+(define-key ac-complete-mode-map "\C-n" 'ac-next)
+(define-key ac-complete-mode-map "\C-p" 'ac-previous)
+;; dirty fix for having autocomplete everywhere
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+						   (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
