@@ -59,8 +59,4 @@
 
 ;; Color Theme
 (color-theme-initialize)
-(color-theme-rotor)
-(set-face-attribute 'highlight nil :foreground 'unspecified)
-(set-face-attribute 'highlight nil :background 'unspecified)
-(set-face-foreground 'highlight nil)
-(set-face-underline-p 'highlight t)
+(color-theme-charcoal-black)
