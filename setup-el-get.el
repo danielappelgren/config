@@ -24,7 +24,8 @@
       (append
        '(highlight-symbol
 		 multiple-cursors
-		 auto-complete)
+		 auto-complete
+		 color-theme)
        (mapcar 'el-get-source-name el-get-sources)
        )
       )
@@ -55,3 +56,11 @@
 						   (auto-complete-mode 1))
                        ))
 (real-global-auto-complete-mode t)
+
+;; Color Theme
+(color-theme-initialize)
+(color-theme-rotor)
+(set-face-attribute 'highlight nil :foreground 'unspecified)
+(set-face-attribute 'highlight nil :background 'unspecified)
+(set-face-foreground 'highlight nil)
+(set-face-underline-p 'highlight t)
